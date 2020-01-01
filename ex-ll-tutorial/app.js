@@ -11,9 +11,12 @@ var catalogRouter = require('./routes/catalog');
 //Import routes for "catalog" area of site
 
 var compression = require('compression');
+var helmet = require('helmet');
 
 //Create the Express application object
 var app = express();
+
+app.use(helmet());
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
