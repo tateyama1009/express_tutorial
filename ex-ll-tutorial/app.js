@@ -20,7 +20,7 @@ app.use(helmet());
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://tateyama:sobahatto1@cluster0-erxms.gcp.mongodb.net/test?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODB_URI || 'mongodb+srv://tateyama:sobahatto1@cluster0-erxms.gcp.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, //useUnifiedTopologyを入れてってエラーがでた
     { useNewUrlParser: true, 
       useUnifiedTopology: true 
